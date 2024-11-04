@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #F4F4F4;
+    font-family: "Lexend Deca", sans-serif;
+    font-style: normal;
+}
+
+header {
+    padding: 2.8em 2.8em 1.8em;
+    position: relative;
+
+}
+
+h1 {
+    font-size: 2em;
+    font-weight: 400;
+}
+
+.desc {
+    font-size: 1.1em;
+    color: #565656;
+}
+
+.search {
+    display: flex;
+    gap: 1.2em;
+}
+
+.search-input-wrapper {
+    position: relative;
+    width: 278px;
+}
+
+.search-input {
+    width: 100%;
+    border: unset;
+    height: 2.4em;
+    border-radius: 2.25em;
+    font-size: 1em;
+    padding: 1em 2em 1em 1em;
+
+}
+
+.search-input:focus {
+    border: 2px solid #008AD8;
+    outline: unset;
+}
+
+.search-icon {
+    position: absolute;
+    bottom: 12%;
+    right: 4%;
+}
+
+.kebab-menu {
+    cursor: pointer;
+
+}
+
+.kebab-menu:hover {
+    transition: background 0.5s;
+    background: #bfbbbbc9;
+    border-radius: 1em;
+}
+
+.css-checkbox {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+}
+
+#inputPreview {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+
+}
+
+.css-checkbox+label {
+    position: relative;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-flex;
+    gap: 1em;
+    align-items: center;
+    height: 18px;
+    color: rgb(0, 0, 0);
+
+}
+
+.css-checkbox+label::before {
+    content: " ";
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 3px;
+    width: 14px;
+    height: 14px;
+    background-color: rgb(255, 255, 255);
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(0, 0, 0);
+    border-radius: 1px;
+    box-shadow: none;
+}
+
+.css-checkbox:checked+label::after {
+    content: " ";
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjZmZmZmZmIiBkPSJNMTczLjg5OCA0MzkuNDA0bC0xNjYuNC0xNjYuNGMtOS45OTctOS45OTctOS45OTctMjYuMjA2IDAtMzYuMjA0bDM2LjIwMy0zNi4yMDRjOS45OTctOS45OTggMjYuMjA3LTkuOTk4IDM2LjIwNCAwTDE5MiAzMTIuNjkgNDMyLjA5NSA3Mi41OTZjOS45OTctOS45OTcgMjYuMjA3LTkuOTk3IDM2LjIwNCAwbDM2LjIwMyAzNi4yMDRjOS45OTcgOS45OTcgOS45OTcgMjYuMjA2IDAgMzYuMjA0bC0yOTQuNCAyOTQuNDAxYy05Ljk5OCA5Ljk5Ny0yNi4yMDcgOS45OTctMzYuMjA0LS4wMDF6Ii8+PC9zdmc+");
+    background-repeat: no-repeat;
+    background-size: 10px 10px;
+    background-position: center center;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0px;
+    left: 0px;
+    top: 0px;
+    text-align: center;
+    background-color: black;
+    font-size: 10px;
+    height: 18px;
+    width: 18px;
+}
+
+.filter {
+    /* border:1px solid black; */
+    display: none;
+    position: absolute;
+    left: 130px;
+    background-color: #FFFFFF;
+    padding: 2em;
+    border-radius: 6px;
+    box-shadow: 11px 18px 54px 0px #0000001C;
+    max-width: 257px;
+    z-index: 1;
+}
+
+@keyframes dissolve {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+        /* Add a slight upward movement */
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        /* Return to the original position */
+    }
+}
+
+.show {
+    display: block;
+    animation: dissolve 300ms ease-out;
+    animation-fill-mode: forwards;
+}
+
+.chk-container label {
+    margin-bottom: 1.1em;
+}
+
+.chk-container:nth-of-type(4) label {
+    margin-bottom: 0;
+}
+
+
+.labels {
+    display: none;
+}
+
+
+.content {
+    padding: 0 1.8em;
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 362px));
+    grid-gap: 1.5rem;
+
+}
+
+.car {
+    padding: 1em;
+    display: block;
+    position: relative;
+}
+
+.car>.detail {
+    margin: 0;
+    font-size: 1.37em;
+    color: #008AD8;
+    font-weight: 400;
+    line-height: 2em;
+}
+
+.car>.location {
+    margin: 0;
+    font-size: 1.1em;
+    font-weight: 400;
+    color: #686868;
+    width: 244px;
+
+}
+
+.car>.price {
+    display: inline-block;
+    margin: 0;
+    padding-top: 1.375em;
+    font-size: 1.5em;
+    font-weight: 400;
+    line-height: 1.9em;
+}
+
+
+.car>.action {
+    display: inline-block;
+    /* Ensure action is inline-block */
+    margin-left: auto;
+    /* Push action to the far right */
+    position: absolute;
+    /* Position it absolutely */
+    bottom: 5%;
+    right: 1em;
+}
+
+
+.car>.action:hover {
+    cursor: pointer;
+}
+
+@keyframes saved {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+
+
+@media(min-width: 1440px) {
+
+    .container {
+        padding: 3.4rem 6.25rem;
+        max-width: 1440px;
+    }
+
+    header {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .search {
+        float: right;
+        margin-top: -50px;
+    }
+
+    .filter {
+        /* border:1px solid black; */
+        position: absolute;
+        right: 0;
+        left: unset;
+    }
+
+    .content {
+        display: block;
+        padding: 0;
+    }
+
+    .labels {
+        display: grid;
+        grid-template-columns: 3fr 2.5fr 1.5fr 0.69fr;
+        justify-content: space-between;
+        background: #008AD8;
+        padding: 1em 1.4em;
+        color: white;
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 0.9em;
+        border-radius: 6px;
+        margin-bottom: 1em;
+    }
+
+    .car {
+        display: grid;
+        grid-template-columns: 3fr 2.5fr 1.5fr 0.69fr;
+        justify-content: space-between;
+        line-height: 2em;
+    }
+
+
+    .car>.price {
+        display: inline-block;
+        margin: 0;
+        padding-top: 0;
+        font-size: 1.5em;
+        font-weight: 400;
+        line-height: unset;
+    }
+
+    .car>.action {
+        display: inline-block;
+        /* Ensure action is inline-block */
+        margin-left: 52px;
+        /* Push action to the far right */
+        position: unset;
+        bottom: unset;
+        right: unset;
+
+    }
+
+}
+
+@media(min-width: 1500px) {
+
+    .container {
+
+        margin: auto;
+    }
+}
